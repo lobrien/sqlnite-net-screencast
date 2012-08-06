@@ -4,7 +4,7 @@
 
 SQLite is a good choice for relational storage in iOS applications (and mobile applications in general). Frank Kreuger's [sqlite-net](http://github.com/praeclarum/sqlite-net) library provides a small, simple-to-use, and fast wrapper that additionally provides a lightweight object-relational mapper.
 
-This ~10 min. screencast shows the basic use of sqlite-net in MonoTouch. It boils down to 4 steps:
+This ~9 min. screencast shows the basic use of sqlite-net in MonoTouch. It boils down to 4 steps:
 
 1. Download or git-clone [sqlite-net](http://github.com/praeclarum/sqlite-net) 
 2. Add references to the C# files (or you can build your own library, but that's not covered in this screencast)
