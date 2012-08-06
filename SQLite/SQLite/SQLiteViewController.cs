@@ -49,22 +49,25 @@ namespace SQLite
 		
 		protected void InitializeDatabase ()
 		{
-			string dbName = "people";
+			var dbName = "people";
 			var conn = new SQLiteAsyncConnection (dbName);
 			conn.CreateTableAsync<Person> ().ContinueWith ((task) =>
 			{
 				foreach (var i in Enumerable.Range (0,1000)) {
-					Person p = new Person ("Bob");
+					var p = new Person ("Bob");
 					conn.InsertAsync (p).ContinueWith ((task2) =>
 					{
 						var id = p.Id;
 						this.InvokeOnMainThread (delegate {
-					this.recordCount.Text = id.ToString();
-					this.recordCount.SetNeedsDisplay();
-					});
-				});
+							this.recordCount.Text = id.ToString ();
+							this.recordCount.SetNeedsDisplay ();
+						}
+						);
+					}
+					);
 				}
-			});
+			}
+			);
 		}
 	}
 }
